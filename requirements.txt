@@ -4,3 +4,7 @@ tensorflow
 opencv-python-headless
 mediapipe
 numpy
+
+
+# .\venv\Scripts\Activate.ps1
+# python app.py
