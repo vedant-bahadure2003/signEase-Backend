@@ -28,6 +28,16 @@ def normalize_landmarks(landmarks):
     normalized_landmarks = [(x - base_x, y - base_y) for x, y in landmarks]
     return normalized_landmarks
 
+@app.route('/', methods=['GET'])
+def health_check():
+    return jsonify({
+        'status': 'healthy',
+        'message': 'SignEase Backend API is running',
+        'endpoints': {
+            '/predict': 'POST - Sign language prediction endpoint'
+        }
+    })
+
 @app.route('/predict', methods=['POST'])
 def predict():
     data = request.get_json()
